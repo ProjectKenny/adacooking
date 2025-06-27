@@ -42,17 +42,17 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { href: '#', icon: Facebook, label: 'Facebook' },
-    { href: '#', icon: Twitter, label: 'Twitter' },
-    { href: '#', icon: Instagram, label: 'Instagram' },
-    { href: '#', icon: Youtube, label: 'YouTube' },
+    { href: 'https://facebook.com/adacooking', icon: Facebook, label: 'Facebook' },
+    { href: 'https://twitter.com/adacooking', icon: Twitter, label: 'Twitter' },
+    { href: 'https://instagram.com/adacooking', icon: Instagram, label: 'Instagram' },
+    { href: 'https://youtube.com/adacooking', icon: Youtube, label: 'YouTube' },
   ]
 
   const stats = [
-    { icon: BookOpen, value: '10,000+', label: 'Recipes' },
-    { icon: Users, value: '50K+', label: 'Home Cooks' },
-    { icon: Award, value: '4.8★', label: 'Average Rating' },
-    { icon: Heart, value: '1M+', label: 'Recipe Saves' },
+    { icon: BookOpen, value: '2,847', label: 'Recipes' },
+    { icon: Users, value: '18,293', label: 'Home Cooks' },
+    { icon: Award, value: '4.7★', label: 'Average Rating' },
+    { icon: Heart, value: '47,582', label: 'Recipe Saves' },
   ]
 
   return (
@@ -87,7 +87,7 @@ export default function Footer() {
                 <ChefHat className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold font-serif">Ada.cooking</h3>
+                <h3 className="text-xl font-bold font-serif">Ada Cooking</h3>
                 <p className="text-sm text-purple-200">Recipe & Food Blog</p>
               </div>
             </Link>
@@ -106,11 +106,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3 text-purple-200">
                 <Phone className="w-4 h-4 text-purple-400" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+65 (8268) 7400</span>
               </div>
               <div className="flex items-center space-x-3 text-purple-200">
                 <MapPin className="w-4 h-4 text-purple-400" />
-                <span className="text-sm">San Francisco, CA</span>
+                <span className="text-sm">Downtown Core, SG</span>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function Footer() {
                 © {currentYear} Ada.cooking. All rights reserved.
               </p>
               <p className="text-purple-300 text-xs mt-1">
-                Made with <Heart className="w-3 h-3 inline text-red-400" /> for food lovers everywhere
+                Made with <Heart className="w-3 h-3 inline text-red-400" /> by <a href="https://kennytan.net" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">KennyTan.net</a>
               </p>
             </div>
 

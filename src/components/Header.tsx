@@ -20,14 +20,39 @@ import {
 function HeaderContent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [showSuggestions, setShowSuggestions] = useState(false)
+  const [suggestions, setSuggestions] = useState<string[]>([])
   const router = useRouter()
   const searchParams = useSearchParams()
+
+  // Sample suggestions data
+  const allSuggestions = [
+    'Chocolate chip cookies', 'Pasta carbonara', 'Chicken tikka masala', 'Beef tacos',
+    'Vegetarian lasagna', 'Thai green curry', 'Banana bread', 'Caesar salad',
+    'Mushroom risotto', 'Fish and chips', 'Apple pie', 'Grilled salmon',
+    'Chicken soup', 'Pizza margherita', 'Beef stir fry', 'Pancakes',
+    'Garlic bread', 'Tomato soup', 'Chicken curry', 'Chocolate cake'
+  ]
 
   // Initialize search query from URL params
   useEffect(() => {
     const query = searchParams?.get('search') || ''
     setSearchQuery(query)
   }, [searchParams])
+
+  // Handle search suggestions
+  useEffect(() => {
+    if (searchQuery.length > 1) {
+      const filtered = allSuggestions.filter(suggestion =>
+        suggestion.toLowerCase().includes(searchQuery.toLowerCase())
+      ).slice(0, 5)
+      setSuggestions(filtered)
+      setShowSuggestions(filtered.length > 0)
+    } else {
+      setSuggestions([])
+      setShowSuggestions(false)
+    }
+  }, [searchQuery])
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -36,7 +61,14 @@ function HeaderContent() {
     } else {
       router.push('/recipes')
     }
+    setShowSuggestions(false)
     setIsMenuOpen(false)
+  }
+
+  const handleSuggestionClick = (suggestion: string) => {
+    setSearchQuery(suggestion)
+    router.push(`/recipes?search=${encodeURIComponent(suggestion)}`)
+    setShowSuggestions(false)
   }
 
   const toggleMenu = () => {
@@ -110,6 +142,8 @@ function HeaderContent() {
                 placeholder="Search recipes..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={() => searchQuery.length > 1 && setShowSuggestions(true)}
+                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                 className="w-full pl-4 pr-12 py-2.5 text-sm bg-white/80 border border-purple-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-500"
               />
               <button
@@ -118,6 +152,23 @@ function HeaderContent() {
               >
                 <Search className="w-4 h-4" />
               </button>
+
+              {/* Search Suggestions */}
+              {showSuggestions && suggestions.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-purple-200 rounded-xl shadow-lg z-50">
+                  {suggestions.map((suggestion, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200 first:rounded-t-xl last:rounded-b-xl"
+                    >
+                      <Search className="w-4 h-4 inline mr-3 text-gray-400" />
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+              )}
             </form>
           </div>
 

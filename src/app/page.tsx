@@ -44,19 +44,19 @@ function HeroSection() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">1,000+</div>
+              <div className="text-3xl font-bold text-purple-600 mb-2">2,847</div>
               <div className="text-sm text-gray-600">Recipes</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">42</div>
               <div className="text-sm text-gray-600">Cuisines</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-600 mb-2">10K+</div>
+              <div className="text-3xl font-bold text-yellow-600 mb-2">18,293</div>
               <div className="text-sm text-gray-600">Home Cooks</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-violet-600 mb-2">4.8★</div>
+              <div className="text-3xl font-bold text-violet-600 mb-2">4.7★</div>
               <div className="text-sm text-gray-600">Average Rating</div>
             </div>
           </div>
@@ -74,42 +74,42 @@ function FeaturedCategories() {
       slug: 'breakfast',
       icon: '🍳',
       color: 'from-yellow-400 to-amber-400',
-      count: 150
+      count: 287
     },
     {
       name: 'Lunch',
       slug: 'lunch',
       icon: '🥗',
       color: 'from-blue-400 to-cyan-400',
-      count: 200
+      count: 394
     },
     {
       name: 'Dinner',
       slug: 'dinner',
       icon: '🍽️',
       color: 'from-purple-400 to-violet-400',
-      count: 300
+      count: 612
     },
     {
       name: 'Desserts',
       slug: 'desserts',
       icon: '🍰',
       color: 'from-pink-400 to-purple-400',
-      count: 180
+      count: 453
     },
     {
       name: 'Appetizers',
       slug: 'appetizers',
       icon: '🥨',
       color: 'from-amber-400 to-yellow-400',
-      count: 120
+      count: 198
     },
     {
       name: 'Beverages',
       slug: 'beverages',
       icon: '🥤',
       color: 'from-indigo-400 to-blue-400',
-      count: 80
+      count: 156
     }
   ]
 
