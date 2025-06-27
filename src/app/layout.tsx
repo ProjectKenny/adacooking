@@ -79,15 +79,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#f97316" />
-        <meta name="color-scheme" content="light" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-      </head>
       <body className={`${inter.className} antialiased bg-gradient-to-br from-orange-50 via-white to-red-50 min-h-screen`}>
         <div className="relative">
           {/* Animated background elements */}
@@ -96,7 +87,7 @@ export default function RootLayout({
             <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-yellow-200/25 to-amber-200/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
           </div>
-          
+
           {/* Main content */}
           <div className="relative z-10">
             {children}
