@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -79,18 +81,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className={`${inter.className} antialiased bg-gradient-to-br from-orange-50 via-white to-red-50 min-h-screen`}>
+      <body className={`${inter.className} antialiased bg-gradient-to-br from-purple-50 via-white to-violet-50 min-h-screen`}>
         <div className="relative">
           {/* Animated background elements */}
           <div className="fixed inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-orange-200/30 to-red-200/30 rounded-full blur-3xl animate-float"></div>
-            <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-green-200/20 to-emerald-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-200/30 to-violet-200/30 rounded-full blur-3xl animate-float"></div>
+            <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-200/20 to-cyan-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-yellow-200/25 to-amber-200/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
           </div>
 
           {/* Main content */}
           <div className="relative z-10">
-            {children}
+            <Header />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
           </div>
         </div>
       </body>

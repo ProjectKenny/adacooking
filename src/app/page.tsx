@@ -18,7 +18,7 @@ function HeroSection() {
       <div className="container-wide">
         <div className="text-center">
           {/* Main heading */}
-          <h1 className="heading-1 mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold font-serif text-gray-900 leading-tight mb-6">
             Welcome to{' '}
             <span className="text-gradient font-serif">Ada.cooking</span>
           </h1>
@@ -44,11 +44,11 @@ function HeroSection() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600 mb-2">1,000+</div>
+              <div className="text-3xl font-bold text-purple-600 mb-2">1,000+</div>
               <div className="text-sm text-gray-600">Recipes</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
               <div className="text-sm text-gray-600">Cuisines</div>
             </div>
             <div className="text-center">
@@ -56,7 +56,7 @@ function HeroSection() {
               <div className="text-sm text-gray-600">Home Cooks</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-red-600 mb-2">4.8★</div>
+              <div className="text-3xl font-bold text-violet-600 mb-2">4.8★</div>
               <div className="text-sm text-gray-600">Average Rating</div>
             </div>
           </div>
@@ -73,21 +73,21 @@ function FeaturedCategories() {
       name: 'Breakfast',
       slug: 'breakfast',
       icon: '🍳',
-      color: 'from-yellow-400 to-orange-400',
+      color: 'from-yellow-400 to-amber-400',
       count: 150
     },
     {
       name: 'Lunch',
       slug: 'lunch',
       icon: '🥗',
-      color: 'from-green-400 to-emerald-400',
+      color: 'from-blue-400 to-cyan-400',
       count: 200
     },
     {
       name: 'Dinner',
       slug: 'dinner',
       icon: '🍽️',
-      color: 'from-orange-400 to-red-400',
+      color: 'from-purple-400 to-violet-400',
       count: 300
     },
     {
@@ -108,7 +108,7 @@ function FeaturedCategories() {
       name: 'Beverages',
       slug: 'beverages',
       icon: '🥤',
-      color: 'from-blue-400 to-cyan-400',
+      color: 'from-indigo-400 to-blue-400',
       count: 80
     }
   ]
@@ -201,7 +201,7 @@ function FeaturedRecipes() {
             <Link key={recipe.id} href={`/recipes/${recipe.id}`}>
               <div className="recipe-card">
                 <div className="recipe-card-image">
-                  <ChefHat className="w-16 h-16 text-orange-600" />
+                  <ChefHat className="w-16 h-16 text-purple-600" />
                 </div>
                 
                 <h3 className="heading-4 mb-2">{recipe.title}</h3>
@@ -239,24 +239,24 @@ function FeaturedRecipes() {
 // Newsletter signup component
 function NewsletterSignup() {
   return (
-    <section className="section-padding bg-gradient-to-r from-orange-500 to-red-500">
+    <section className="section-padding bg-gradient-to-r from-purple-500 to-violet-600">
       <div className="container-narrow">
         <div className="text-center text-white">
-          <h2 className="heading-2 mb-4">Stay Updated</h2>
-          <p className="body-large mb-8 opacity-90">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-white leading-tight mb-4">Stay Updated</h2>
+          <p className="text-lg text-purple-100 mb-8 opacity-90">
             Get the latest recipes, cooking tips, and culinary inspiration delivered to your inbox
           </p>
-          
+
           <form className="max-w-md mx-auto">
             <div className="flex gap-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-orange-500"
+                className="flex-1 px-4 py-3 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-500"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-white text-orange-600 font-medium rounded-xl hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-orange-500 transition-colors duration-200"
+                className="px-6 py-3 bg-white text-purple-600 font-medium rounded-xl hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-500 transition-colors duration-200"
               >
                 Subscribe
               </button>
@@ -271,22 +271,22 @@ function NewsletterSignup() {
 // Main page component
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <Suspense fallback={<LoadingSpinner />}>
         <HeroSection />
       </Suspense>
-      
+
       <Suspense fallback={<LoadingSpinner />}>
         <FeaturedCategories />
       </Suspense>
-      
+
       <Suspense fallback={<LoadingSpinner />}>
         <FeaturedRecipes />
       </Suspense>
-      
+
       <Suspense fallback={<LoadingSpinner />}>
         <NewsletterSignup />
       </Suspense>
-    </main>
+    </div>
   )
 }

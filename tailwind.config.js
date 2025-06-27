@@ -8,42 +8,42 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Food-themed color palette
+        // Light Purple-themed color palette
         primary: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316', // Main orange
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
+          50: '#faf5ff',
+          100: '#f3e8ff',
+          200: '#e9d5ff',
+          300: '#d8b4fe',
+          400: '#c084fc',
+          500: '#a855f7', // Main light purple
+          600: '#9333ea',
+          700: '#7c3aed',
+          800: '#6b21a8',
+          900: '#581c87',
         },
         secondary: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80', // Fresh green
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8', // Light blue
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
         },
         accent: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24', // Warm yellow
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
+          50: '#fefce8',
+          100: '#fef9c3',
+          200: '#fef08a',
+          300: '#fde047',
+          400: '#facc15', // Warm yellow
+          500: '#eab308',
+          600: '#ca8a04',
+          700: '#a16207',
+          800: '#854d0e',
+          900: '#713f12',
         },
         warm: {
           50: '#fafaf9',
@@ -66,9 +66,9 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'food-gradient': 'linear-gradient(135deg, #f97316 0%, #dc2626 100%)',
-        'fresh-gradient': 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
-        'warm-gradient': 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
+        'primary-gradient': 'linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)',
+        'secondary-gradient': 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%)',
+        'accent-gradient': 'linear-gradient(135deg, #facc15 0%, #eab308 100%)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -86,8 +86,9 @@ module.exports = {
       },
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-        'food': '0 10px 40px rgba(249, 115, 22, 0.3)',
-        'fresh': '0 10px 40px rgba(34, 197, 94, 0.3)',
+        'primary': '0 10px 40px rgba(168, 85, 247, 0.3)',
+        'secondary': '0 10px 40px rgba(56, 189, 248, 0.3)',
+        'accent': '0 10px 40px rgba(250, 204, 21, 0.3)',
       }
     },
   },
